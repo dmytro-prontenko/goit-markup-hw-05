@@ -182,8 +182,7 @@ img {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .modal-close-btn,  */
-.modal > button {
+.modal-close-btn {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -197,21 +196,24 @@ img {
 
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background: var#e7e9fc;
+  background-color: var(--portfolio-btn-brd);
 
   cursor: pointer;
 
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .modal-close-btn:hover,
-.modal-close-btn:focus { */
-.modal > button:hover,
-.modal > button:focus {
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  border: none;
   border-radius: 24px;
   background: var(--action-color);
   fill: var(--page-color);
+}
+
+.modal-close-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*#endregion COMMON*/
 
@@ -722,7 +724,7 @@ img {
 
 .portfolio-item:hover .overlay-text,
 .portfolio-item:focus .overlay-text {
-  transform: translate(0, 0);
+  transform: translateY(0);
 }
 
 .portfolio-link:hover,
