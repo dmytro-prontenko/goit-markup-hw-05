@@ -142,6 +142,7 @@ img {
 .social-link:hover,
 .social-link:focus {
   background-color: var(--social-active);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*#endregion COMMON*/
@@ -179,7 +180,6 @@ img {
 }
 
 .page-header {
-  /* position: relative; */
   padding: 22.5px 156px;
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
@@ -208,7 +208,6 @@ img {
 }
 
 .nav-link {
-  /* display: inline-block; */
   padding: 24px 0;
   font-weight: 500;
   line-height: 1.5;
@@ -229,20 +228,24 @@ img {
   text-align: center;
 }
 
-.nav-item:hover ::after {
+.nav-item ::after {
   content: "";
 
   position: absolute;
   display: block;
-  margin: auto;
-  left: 50%;
-  bottom: -24px;
-  transform: translate(-50%, 0%);
   width: 48px;
   height: 4px;
   border-radius: 2px;
-
+  left: 50%;
+  bottom: -24px;
+  transform: translate(-50%, 0%);
   background-color: var(--accent-color);
+  opacity: 0;
+}
+
+.nav-item:hover ::after {
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-list {
@@ -263,7 +266,6 @@ img {
 
 .address {
   display: flex;
-  /* margin-left: auto; */
 
   font-style: normal;
 }
@@ -556,15 +558,19 @@ img {
   border: 1px solid #8e8f99;
 
   color: var(--icon-customer-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-link:hover,
 .customer-link:focus {
   border-color: var(--action-color);
   color: var(--action-color);
+  /* transition: border-color 2250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
+
 .customer-icon {
   fill: currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-icon:hover,
@@ -678,6 +684,8 @@ img {
   color: var(--accent-color);
   background-color: var(--light-text);
   cursor: pointer;
+
+  /* transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 
   border-radius: 4px;
   border: 1px solid var(--portfolio-btn-brd);
